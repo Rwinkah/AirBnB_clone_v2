@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 import MySQLdb
 
 
-@unittest.skipif(os.getenv('HBNB_TYPE_STORAGE') == 'db',
+@unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') == 'db',
                  'filestorage test not supported')
 class test_db_storage(unittest.Testcase):
     """ class to test db storage engine """
