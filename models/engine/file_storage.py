@@ -54,3 +54,4 @@ class FileStorage:
         if obj is not None:
             FileStorage.__objects.remove((obj.__class__.__name__ +
                                           '.' + obj.id))
+            self.save()
