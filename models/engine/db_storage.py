@@ -14,7 +14,8 @@ from sqlalchemy.orm import sessionmaker
 nameClass = {'Amenity': Amenity, 'City': City,
              'Place': Place, 'State': State,
              'Review': Review, 'User': User}
- 
+
+
 class DBStorage():
     """ This class handsles db storage for hbnb"""
     def __init__(self):
@@ -26,11 +27,12 @@ class DBStorage():
         db = os.getenv('HBNB_MYSQL_DB')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(
                                        user, password, host, database))
-        self.__sessionInst = sessionmaker(bind=self.__engine, expire_on_commit=False)
+        self.__sessionInst = sessionmaker(bind=self.__engine,
+                                          expire_on_commit=False)
         self.__session = sessionInst()
 
     def all(self, cls=None):
-        """ returns an object containing all objects 
+        """ returns an object containing all objects
         or all objects of a class if specifiedn"""
 
         objects = {}
