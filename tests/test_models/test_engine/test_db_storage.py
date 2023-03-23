@@ -3,11 +3,12 @@
 import unittest
 from models.base_model import BaseModel
 import MySQLdb
+import os
 
 
 @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') == 'db',
                  'filestorage test not supported')
-class test_db_storage(unittest.Testcase):
+class test_db_storage(unittest.TestCase):
     """ class to test db storage engine """
 
     def setup(self):
